@@ -1,0 +1,23 @@
+version: "3"
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    ports:
+      - "3306:3306"
+
+  web:
+    build:
+      context: cms-api
+    command: rails s -p 3001
+    # command: echo hello
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./cms-api:/app
