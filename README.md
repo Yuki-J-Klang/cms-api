@@ -7,3 +7,7 @@ docker compose up
 ```
 docker compose exec web rails db:create
 ```
+3. データベースをマイグレーションする
+```
+docker compose exec web rails db:migrate
+```
