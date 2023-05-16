@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = user.select(params[:id])
+    @user = user.find(params[:id])
     if @user.nil?
       render_404
     else
