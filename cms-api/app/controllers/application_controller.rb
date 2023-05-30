@@ -5,12 +5,7 @@ class ApplicationController < ActionController::API
   rescue_from Exception, with: :render_500
 
   def users_success(users)
-    render status: 200, json: {
-      data: [
-        email: users.email,
-        password: users.password
-      ]
-    }
+    render status: 200, json: users, only: [:email, :password]
   end
 
   def user_success(user)
