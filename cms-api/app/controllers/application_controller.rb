@@ -6,7 +6,10 @@ class ApplicationController < ActionController::API
 
   def users_success(users)
     render status: 200, json: {
-      data: users
+      data: [
+        email: users.email,
+        password: users.password
+      ]
     }
   end
 
