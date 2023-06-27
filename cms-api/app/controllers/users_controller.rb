@@ -18,20 +18,20 @@ class UsersController < ApplicationController
   end
   
   def show
-    user = user.find(params[:id])
-    if user.nil?
-      render_404
-    else
+    user = User.find(params[:id])
+    if user
       user_success(user)
+    else
+      render_404
     end
   end
 
   def index
     user = User.all
-    if user.nil?
-      render_404 
-    else
+    if user
       users_success(user)
+    else
+      render_404 
     end
   end
   
