@@ -1,5 +1,5 @@
 
-1.イメージを作成
+1.イメージを作成。
 ```
 docker compose build
 ```
@@ -7,15 +7,15 @@ docker compose build
 ```
 docker compose up -d
 ```
-3. データベースを作る
+3. データベースを作る。
 ```
 docker compose exec web rails db:create
 ```
-4. データベースをマイグレーションする
+4. データベースをマイグレーションする。
 ```
 docker compose exec web rails db:migrate
 ```
-5.seedsに作成データをいれよう
+5.seedsに作成データをいれる。
 ```
 docker compose exec web rails db:seed
 ```
