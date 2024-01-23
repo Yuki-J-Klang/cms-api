@@ -15,7 +15,7 @@ docker compose exec web rails db:create
 ```
 docker compose exec web rails db:migrate
 ```
-5.seedsを作成データをいれよう
+5.seedsに作成データをいれよう
 ```
 docker compose exec web rails db:seed
 ```
